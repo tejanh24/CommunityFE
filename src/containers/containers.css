@@ -1,0 +1,68 @@
+.btn-secondary {
+    color: #23282c;
+    background-color: rgb(230, 230, 230) !important;
+    border-color: #ffffff;
+}
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
+    /* color: #23282c; */
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+.nav-color{
+color: white !important;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    color: #fff;
+    background: #4652a3;
+}
+.sidebar .nav-link.active {
+    color: #fff;
+    background: #5873db;
+}
+
+.sidebar .nav-link:hover {
+    color: #fff;
+    background:#5873db;
+    border-radius: 35px 0px 0px 35px !important;
+}
+
+.icon{
+color:white;
+}
+
+.navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.09375rem;
+    line-height: 1;
+    background-color: #dfeaf500;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+.app-header {
+    position: relative;
+    flex-direction: row;
+    height: 55px;
+    padding: 0;
+    margin: 0;
+    background-color: #5068c2;
+    border-bottom: 1px solid #c8ced3;
+}
+
+.navbar-nav .nav-link {
+    color: #ebeef1;
+}
+
+.app-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 1rem;
+    color: #fff;
+    background: #5068c2;
+    border-top: 1px solid #c8ced3;
+}
+

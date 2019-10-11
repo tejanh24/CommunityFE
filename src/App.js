@@ -1,99 +1,35 @@
-import React, { Component, alert } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Button from '@material-ui/core/Button';
-import { TextField } from '@material-ui/core';
-import { Alert } from 'react-alert';
-import { BrowserRouter, Switch, Router, Link ,withRouter } from 'react-router-dom';
-import { browserHistory, Route } from 'react-router';
-import Home from './Dashboard';
+import React, { Component } from 'react';
+import { HashRouter, Route, Switch } from 'react-router-dom';
+// import { renderRoutes } from 'react-router-config';
+import './App.scss';
+import "../node_modules/video-react/dist/video-react.css";
 
+const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
 
+// Containers
+const DefaultLayout = React.lazy(() => import('./containers/DefaultLayout'));
+
+// Pages
+const Login = React.lazy(() => import('./views/Pages/Login'));
+// const Register = React.lazy(() => import('./views/Pages/Register'));
+// const Page404 = React.lazy(() => import('./views/Pages/Page404'));
+// const Page500 = React.lazy(() => import('./views/Pages/Page500'));
 
 class App extends Component {
 
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      email: "",
-
-    };
-  }
-
-  validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0;
-  }
-
-
-
-onClick(e){
-
-  this.props.history.push("./src/Dashboard");
-  //  <Route path="./src/Dashboard" component={Home} />
- 
-
-}
-
-
-
   render() {
-    const onClick = this.onClick;
-
     return (
-
-      <div>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Mouritech Community
-        </p>
-
-            <div className="App-body">
-            </div>
-          </header>
-
-          <div className="App-body">
-            <div className="row" id="Body">
-              <div className="medium-5 columns left">
-                <h4>Login</h4>
-
-                <div className="App-body">
-
-                  <label className="left">Email </label>
-
-
-                  <input type="text" name="email" onChange={this.onChange}
-                    onChangeText={(email) => this.setState({ email })}
-                    value={this.state.username}
-                  />
-
-                  {/* <Route path="/Dashboard" exact component={Button} /> */}
-                  {/* <Router>
-                    <div>
-                      <Route path="/Dashboard" component={Home} />
-                    </div>
-                  </browserHistory> */}
-
-
-<Button onClick={onClick}> Click  </Button>
-                  {/* <BrowserRouter>
-                    <Switch>
-                    <Route path="./src/Dashboard" component={Home} />
-                    </Switch>
-                  </BrowserRouter> */}
-
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
+      <HashRouter>
+          <React.Suspense fallback={loading()}>
+            <Switch>
+              <Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
+              {/* <Route exact path="/register" name="Register Page" render={props => <Register {...props}/>} />
+              <Route exact path="/404" name="Page 404" render={props => <Page404 {...props}/>} />
+              <Route exact path="/500" name="Page 500" render={props => <Page500 {...props}/>} /> */}
+             <Route path="/" name="Home" render={props => <DefaultLayout {...props}/>} />
+            </Switch>
+          </React.Suspense>
+      </HashRouter>
     );
   }
 }

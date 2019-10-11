@@ -1,0 +1,25 @@
+.card {
+          position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid #ffffff00 !important;
+        border-radius: 0.25rem
+}
+.btn-success {
+    color: #fff;
+    background-color: #20a8d8 !important;
+    border-color: #178db7 !important;
+}
+.btn-block {
+    display: block;
+    width: 150px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+

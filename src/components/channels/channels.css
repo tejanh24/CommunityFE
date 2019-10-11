@@ -1,0 +1,59 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 10px !important;
+    border: none !important;
+  
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #20a8d8;
+    border-color: #20a8d8;
+    margin-left: 10px;
+}
+
+.pillclass{
+    float: right;
+}
+.buttonsalign{
+    margin-right: -2px;
+}
+.cardstyle{
+    width:220px !important;
+    height: 160px !important;
+}
+.imgaline{
+    display: block !important;
+    margin-top:30px !important;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center !important;
+    vertical-align: middle;
+    border-style: none;
+
+}
+.imgtext{
+    text-align: center !important;
+}
+.newpillclass{
+   
+    float: right;
+}
+.custom-control-label {
+    position: relative;
+    margin-bottom: 0;
+    vertical-align: top;
+    top: -5px;
+    right: -5px;
+}
+
+.h4{ 
+color: #394b8d !important; 
+font-weight:700 !important;
+ }
